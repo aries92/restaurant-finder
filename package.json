@@ -1,0 +1,36 @@
+{
+  "name": "restaurant-finder",
+  "version": "0.1.0",
+  "private": true,
+  "homepage" : "http://aries92.github.io/restaurant-finder",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "bootstrap": "^4.0.0-beta.2",
+    "classnames": "^2.2.5",
+    "debounce": "^1.1.0",
+    "gh-pages": "^1.1.0",
+    "google-maps-react": "^1.1.2",
+    "material-ui": "^0.20.0",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "node-sass-chokidar": "0.0.3",
+    "npm-run-all": "^4.1.2",
+    "query-string": "^5.0.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "typeface-roboto": "0.0.45"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject"
+  }
+}
